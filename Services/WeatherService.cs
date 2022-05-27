@@ -16,7 +16,7 @@ public class WeatherService
         Console.Write("What US city would you like to get weather for? [Ex: Phoenix, AZ or ZIP Code]  ");
         var location = Console.ReadLine() ?? "";
 
-        var weather = await _weatherRepository.GetWeatherForecast(location);
+        var weather = _weatherRepository.GetWeatherForecast(location);
         Console.WriteLine($"The current weather is {weather.Current.TempF} degrees Fahrenheit.");
     }
 }

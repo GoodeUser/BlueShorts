@@ -15,7 +15,7 @@ namespace BlueShorts.Data
             },
         };
 
-        public async Task<Weather> GetWeatherForecast(string location)
+        public Weather GetWeatherForecast(string location)
         {
             var current = new CurrentWeather
             {

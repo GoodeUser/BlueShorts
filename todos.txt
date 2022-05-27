@@ -1,0 +1,11 @@
+1. We’ll have a console app that has the api_key for weather API and prompt the user “What US city would you like to get weather for?”
+2. Ceate a class called “Location” in the Data folder with the following properties:
+    1. a text property called “Name”
+    2. a date property called “Localtime”. Casing here matters so the name of the properties should match exactly.
+3. Add a property to the class called “Weather” for the class that you just created and name it “Location”.
+4. In the WeatherApiService class, replace the “GetWeatherForecast” method with a method that makes an HTTP GET request to the URL below and be sure to replace the query string parameter named “q” with the location that the user entered. Return the response as the “WeatherForecast” type and make the method “async”.
+    1. http://api.weatherapi.com/v1/forecast.json?key=2116719381ce4995bb922008222505&q=[location]&days=2&aqi=no&alerts=no
+    2. Run the console application and verify that it outputs data from the location provided.
+5. Inside of the response object there is a Forecast property containing the weather forecast for each day broken down by hour. Calculate the average temperature in Fahrenheit for the next 2 days and output it in the following format:
+    1. The average temperature in Fahrenheit for the next 2 days is [averageTemp] degrees.
+6. Extract the WeatherForecastRepository class to an interface and use the interface in the WeatherService instead of the actual implementation.
