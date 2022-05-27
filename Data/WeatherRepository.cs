@@ -1,9 +1,20 @@
 using BlueShorts.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace BlueShorts.Data
 {
     public class WeatherRepository
     {
+        // The response from the API will be in snake_case format
+        private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
+        {
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new SnakeCaseNamingStrategy()
+            },
+        };
+
         public async Task<Weather> GetWeatherForecast(string location)
         {
             var current = new CurrentWeather
