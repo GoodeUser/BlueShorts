@@ -1,4 +1,4 @@
-# TODOs
+# Things to do
 1. Create a class called “Location” in the Models folder with the following properties:
 	- A text property called “Name”
 	- A date property called “Localtime”. Casing here matters so the name of the properties should match exactly.
