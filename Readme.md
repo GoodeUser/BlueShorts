@@ -7,7 +7,7 @@
     -  [http://api.weatherapi.com/v1/forecast.json?key=2116719381ce4995bb922008222505&q=[location]&days=2&aqi=no&alerts=no](http://api.weatherapi.com/v1/forecast.json?key=2116719381ce4995bb922008222505&q=%5Blocation%5D&days=2&aqi=no&alerts=no)
     - Run the console application and verify that it outputs data from the location provided.
 1.  Extract the WeatherForecastRepository class to an interface and use the interface in the WeatherService instead of the actual implementation.
-1.  Create a class called HotDay and another class called ColdDay. These classes are going to share a base class that you can name whatever you’d like.
+1.  Create a class named HotDay and another class named ColdDay. These classes are going to share a base class which you can name whatever you’d like.
     - The base class should have a method named “ShowMessage”.
     - The HotDay class will log out the hottest hour of the day when the “ShowMessage” method is called using the following message format: “The hottest hour of the day will be [hottest hour: eg. 1 PM] with a temperature of [temperature for the hottest hour] degrees Fahrenheit.
     - The ColdDay class will log out the coldest hour of the day when the “ShowMessage” method is called using the following message format: “The coldest hour of the day will be [coldest hour: eg. 1 PM] with a temperature of [temperature for the coldest hour] degrees Fahrenheit.
