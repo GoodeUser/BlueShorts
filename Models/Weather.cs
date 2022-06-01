@@ -1,13 +1,14 @@
-namespace BlueShorts.Models;
-
-public class Weather
+namespace BlueShorts.Models
 {
-    public Weather(WeatherForecast forecast, CurrentWeather current)
+    public class Weather
     {
-        Forecast = forecast;
-        Current = current;
-    }
+        public Weather(WeatherForecast forecast, CurrentWeather current)
+        {
+            Forecast = forecast;
+            Current = current;
+        }
 
-    public WeatherForecast Forecast { get; set; }
-    public CurrentWeather Current { get; set; }
+        public WeatherForecast Forecast { get; set; }
+        public CurrentWeather Current { get; set; }
+    }
 }

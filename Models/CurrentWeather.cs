@@ -1,7 +1,10 @@
-namespace BlueShorts.Models;
+using System;
 
-public class CurrentWeather
+namespace BlueShorts.Models
 {
-    public DateTime LastUpdated { get; set; }
-    public float TempF { get; set; }
+    public class CurrentWeather
+    {
+        public DateTime LastUpdated { get; set; }
+        public float TempF { get; set; }
+    }
 }

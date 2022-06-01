@@ -3,27 +3,29 @@ using BlueShorts.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
-namespace BlueShorts;
-
-public class Startup
+namespace BlueShorts
 {
-    public static IHostBuilder CreateHostBuilder(string[] args)
+    public class Startup
     {
-        var hostBuilder = Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((context, builder) =>
-            {
-                builder.SetBasePath(Directory.GetCurrentDirectory());
-            })
-            .ConfigureServices(ConfigureServices);
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            var hostBuilder = Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((context, builder) =>
+                {
+                    builder.SetBasePath(Directory.GetCurrentDirectory());
+                })
+                .ConfigureServices(ConfigureServices);
 
-        return hostBuilder;
-    }
+            return hostBuilder;
+        }
 
-    public static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
-    {
-        // add services
-        services.AddTransient<WeatherRepository>();
-        services.AddTransient<WeatherService>();
+        public static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
+        {
+            // add services
+            services.AddTransient<WeatherRepository>();
+            services.AddTransient<WeatherService>();
+        }
     }
 }

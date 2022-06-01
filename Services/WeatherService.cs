@@ -1,22 +1,25 @@
 using BlueShorts.Data;
+using System;
+using System.Threading.Tasks;
 
-namespace BlueShorts.Services;
-
-public class WeatherService
+namespace BlueShorts.Services
 {
-    private readonly WeatherRepository _weatherRepository;
-
-    public WeatherService(WeatherRepository weatherRepository)
+    public class WeatherService
     {
-        _weatherRepository = weatherRepository;
-    }
+        private readonly WeatherRepository _weatherRepository;
 
-    public async Task Run()
-    {
-        Console.Write("What US city would you like to get weather for? [Ex: Phoenix, AZ or ZIP Code]  ");
-        var location = Console.ReadLine() ?? "";
+        public WeatherService(WeatherRepository weatherRepository)
+        {
+            _weatherRepository = weatherRepository;
+        }
 
-        var weather = _weatherRepository.GetWeatherForecast(location);
-        Console.WriteLine($"The current weather is {weather.Current.TempF} degrees Fahrenheit.");
+        public async Task Run()
+        {
+            Console.Write("What US city would you like to get weather for? [Ex: Phoenix, AZ or ZIP Code]  ");
+            var location = Console.ReadLine() ?? "";
+
+            var weather = _weatherRepository.GetWeatherForecast(location);
+            Console.WriteLine($"The current weather is {weather.Current.TempF} degrees Fahrenheit.");
+        }
     }
 }

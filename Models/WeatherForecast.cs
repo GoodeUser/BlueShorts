@@ -1,6 +1,9 @@
-namespace BlueShorts.Models;
+using System.Collections.Generic;
 
-public class WeatherForecast
+namespace BlueShorts.Models
 {
-    public IEnumerable<ForecastDay> Forecastday { get; set; }
+    public class WeatherForecast
+    {
+        public IEnumerable<ForecastDay> Forecastday { get; set; }
+    }
 }

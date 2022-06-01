@@ -1,8 +1,11 @@
-namespace BlueShorts.Models;
+using System.Collections.Generic;
 
-public class ForecastDay
+namespace BlueShorts.Models
 {
-    public float MaxtempF { get; set; }
-    public float MintempF { get; set; }
-    public IEnumerable<ForecastHour> Hour { get; set; }
+    public class ForecastDay
+    {
+        public float MaxtempF { get; set; }
+        public float MintempF { get; set; }
+        public IEnumerable<ForecastHour> Hour { get; set; }
+    }
 }

@@ -1,13 +1,15 @@
 ﻿using BlueShorts.Services;
+using System.Threading.Tasks;
 
-namespace BlueShorts;
-
-public static class Program
+namespace BlueShorts
 {
-    public static async Task Main(string[] args)
+    public static class Program
     {
-        var host = Startup.CreateHostBuilder(args).Build();
-        var weatherService = (WeatherService) host.Services.GetService(typeof(WeatherService))!;
-        await weatherService.Run();
+        public static async Task Main(string[] args)
+        {
+            var host = Startup.CreateHostBuilder(args).Build();
+            var weatherService = (WeatherService)host.Services.GetService(typeof(WeatherService))!;
+            await weatherService.Run();
+        }
     }
 }
