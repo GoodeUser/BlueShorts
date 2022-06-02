@@ -30,8 +30,11 @@ namespace BlueShorts.Data
                 {
                     new ForecastDay
                     {
-                        MaxtempF = 100,
-                        MintempF = 50,
+                        Day = new ForecastDay.DayDto
+                        {
+                            MaxtempF = 100,
+                            MintempF = 50,
+                        }
                     }
                 },
             };
