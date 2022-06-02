@@ -1,3 +1,5 @@
+using System;
+
 namespace BlueShorts
 {
     public class ForecastHour
@@ -11,5 +13,6 @@ namespace BlueShorts
         public int Humidity { get; set; }
         public float Uv { get; set; }
         public int ChanceOfRain { get; set; }
+        public DateTime Time { get; set; }
     }
 }
